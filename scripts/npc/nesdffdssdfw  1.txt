@@ -1,0 +1,662 @@
+	"blinding_light_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"keeper_of_the_light_blinding_light"
+		"AOERadius"						"%radius"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_aoe.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"1.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"225"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"miss_duration"			"4.0 5.0 6.0 7.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"500 1000 2000 4000"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"1 1.5 3 6"
+			}
+			// Extra
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tree_radius"			"150"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_KeeperOfTheLight.BlindingLight"
+				"Target" 		"CASTER"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_aoe.vpcf"
+				"EffectAttachType"  "start_at_customorigin"
+				"TargetPoint"		"POINT"
+
+				"ControlPoints"
+				{
+					"01"	"POINT"
+					"02"	"%radius 0 0"
+				}
+				
+			}
+			
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"Knockback"
+					{
+						"Target"            "TARGET"
+						"Center" 	        "POINT"
+						"Distance"	        "%knockback_distance"
+						"Duration"	        "%knockback_duration"
+						"Height"	        "%knockback_height"
+						"IsFixedDistance"	"1"
+						"ShouldStun"        "0"	
+					}
+
+					"DelayedAction"
+					{
+						"Delay"     "%knockback_duration"
+						"Action"    
+						{
+							"DestroyTrees"
+							{
+								"Target" 		"TARGET"
+								"Radius"		"%tree_radius"
+							}
+							
+						}
+					}				
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_blinding_light_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%miss_duration"
+					}
+				}
+			}		
+		}
+
+		"Modifiers"
+		{
+			"modifier_blinding_light_datadriven"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_rate" 
+				}			
+			}
+		}
+	"blinding_light2_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"boss_aoe"
+		"AOERadius"						"%radius"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_warlock.vsndevts"
+			"particle"			"particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf"
+			"particle"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"1.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800 900 1000 1100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"miss_duration"			"4.0 5.0 6.0 7.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"1"
+			}
+			// Extra
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tree_radius"			"150"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"abilitydamage"			"170 200 230 260"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Warlock.RainOfChaos"
+				"Target" 		"CASTER"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_warlock/warlock_rain_of_chaos.vpcf"
+				"EffectAttachType" "follow_origin"
+				"EffectRadius"   "1000"
+			}
+			
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"Knockback"
+					{
+						"Target"            "TARGET"
+						"Center" 	        "CASTER"
+						"Distance"	        "%knockback_distance"
+						"Duration"	        "%knockback_duration"
+						"Height"	        "%knockback_height"
+						"IsFixedDistance"	"1"
+						"ShouldStun"        "0"	
+					}
+
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%abilitydamage"
+						}
+					}
+
+					"DelayedAction"
+					{
+						"Delay"     "%knockback_duration"
+						"Action"    
+						{
+							"DestroyTrees"
+							{
+								"Target" 		"TARGET"
+								"Type"			"PURE"
+								"Radius"		"%tree_radius"
+							}
+							
+						}
+					}				
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_blinding_light_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%miss_duration"
+					}
+				}
+			}		
+		}
+
+		"Modifiers"
+		{
+			"modifier_blinding_light_datadriven"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_rate" 
+				}			
+			}
+		}
+	"normal_arrow"
+	{
+		"BaseClass"         "ability_datadriven"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityCastPoint"  "0.2"
+		"AbilityCastRange"  "3000"
+		"AbilityCooldown"   "3"
+		"AbilityManaCost"   "1"
+		"AbilityTextureName"    "mirana_notso"
+
+		"precache"
+		{
+			"particle"  "particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+			"particle"  "particles/units/heroes/hero_mirana/mirana_spell_arrow_launch_glow.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+				"EffectName"     "particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+				"Target" 		"POINT"
+				"MoveSpeed"      "%speed"
+				"StartRadius"    "150"
+				"EndRadius"      "150"
+				"StartPosition"  "attach_attack"
+				"FixedDistance"  "3000"
+				"TargetTeams"    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"    "DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"HasFrontalCone" "0"
+				"ProvidesVision" "1"
+				"VisionRadius"   "650"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Hero_Mirana.Attack"
+				"Target"    "CASTER"
+			}
+			"FireEffect"
+			{
+				"EffectName"    "particles/units/heroes/hero_mirana/mirana_spell_arrow_launch_glow.vpcf"
+				"Target"    "CASTER"
+				"EffectAttachType" "follow_origin"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"   "1"
+			"Damage"
+			{
+				"Target"    "TARGET"
+				"Type"      "DAMAGE_TYPE_PHYSICAL"
+				"Damage"    "%dmg"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Hero_Mirana.ProjectileImpact"
+				"Target"        "TARGET"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"dmg"       "125 175 225 275"
+			}
+			"02"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"speed"     "800 850 900 950"
+			}
+			"03"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"r"         "100"
+			}
+		}
+	}
+	"arrow_barrage"
+	{
+		"BaseClass"         "ability_datadriven"
+		"AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"  "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"  "DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastPoint"  "0.5"
+		"AbilityCastRange"  "3000"
+		"AbilityCooldown"   "80"
+		"AbilityDamage"     "0"
+		"AbilityManaCost"   "1"
+		"AbilityTextureName"    "mirana_barrage"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+			"particle"  "particles/econ/items/mirana/mirana_starstorm_bow/mirana_starstorm_starfall_impact_d.vpcf"
+			"particle"  "particles/econ/items/mirana/mirana_starstorm_bow/mirana_starstorm_starfall_impact_e.vpcf"
+			"particle"  "particles/units/heroes/hero_mirana/mirana_moonlight_ray.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_arrow"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"			
+			}
+			"FireSound"
+			{
+				"EffectName"    "Ability.Starfall"
+				"Target"    "TARGET"
+			}
+			"FireEffect"
+			{
+				"EffectName"    "particles/units/heroes/hero_mirana/mirana_moonlight_ray.vpcf"
+				"Target"    "TARGET"
+				"EffectAttachType" "follow_origin"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"   "1"
+			"Damage"
+			{
+				"Target"    "TARGET"
+				"Type"      "DAMAGE_TYPE_PHYSICAL"
+				"Damage"    "500"
+			}
+			"FireSound"
+			{
+				"EffectName"    "Ability.StarfallImpact"
+				"Target"        "TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_arrow"
+			{
+				"Duration" "%duration"
+				"ThinkInterval" "0.3"
+				"OnIntervalThink"
+				{
+					"LinearProjectile"
+					{
+						"EffectName"     "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+						"Target" 		"TARGET"
+						"MoveSpeed"      "%speed"
+						"StartRadius"    "150"
+						"EndRadius"      "150"
+						"StartPosition"  "attach_attack"
+						"FixedDistance"  "10000"
+						"TargetTeams"    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"TargetTypes"    "DOTA_UNIT_TARGET_HERO"
+						"TargetFlags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						"HasFrontalCone" "0"
+						"ProvidesVision" "1"
+						"VisionRadius"   "650"
+					}
+					"FireSound"
+					{
+						"EffectName"    "Hero_Mirana.ArrowCast"
+						"Target"    "CASTER"
+					}
+					"FireEffect"
+					{
+						"EffectName"    "particles/econ/items/mirana/mirana_starstorm_bow/mirana_starstorm_starfall_impact_d.vpcf"
+						"Target"    "CASTER"
+						"EffectAttachType" "follow_origin"
+					}
+					"FireEffect"
+					{
+						"EffectName"    "particles/econ/items/mirana/mirana_starstorm_bow/mirana_starstorm_starfall_impact_e.vpcf"
+						"Target"    "CASTER"
+						"EffectAttachType" "follow_origin"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"firerate"         "0.3"
+			}
+			"02"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"speed"     "400 450 500"
+			}
+			"03"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"r"         "100"
+			}
+			"04"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"duration"         "4 4.5 5"
+			}
+		}
+	}
+	"poison_explosion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"aids_aoe"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+			"particle"			"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"1.0"
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"hero_viper.viperStrike"
+				"Target" 		"CASTER"
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+				"Target" 		"CASTER"
+				"EffectAttachType" "follow_origin"
+				"EffectRadius"   "1000"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_aids"
+						"Target" 		"TARGET"
+						"Duration"		%aidsduration"			
+					}
+				}
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_aids"
+			{
+				"EffectName"		"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Duration" "%aidsduration"
+				"ThinkInterval" "0.2"
+				"OnIntervalThink"
+				{
+					"MaxHealthPercentBasedDamage"
+					{
+						"Type" "DAMAGE_TYPE_MAGICAL"
+						"Damage" "%AbilityDamage"
+						"Target"    "TARGET"
+					}
+					"FireSound"
+					{
+						"EffectName"    "hero_viper.viperStrikeImpact"
+						"Target"    "TARGET"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"%radius"         "900 1000 1100
+			}
+			"02"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"aidsduration"	     "5 6 7"
+			}
+			"03"
+			{
+				"var_type"  "FIELD_INTEGER"
+				"%AbilityDamage"         "2 3 4"
+			}
+		}
+	}
+}

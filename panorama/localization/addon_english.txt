@@ -1,0 +1,64 @@
+"addon"
+{
+	"PointsToWin"									"+{d:points_to_win} more"
+	"PointsToWin_CloseToVictory"					"+{d:points_to_win} more"
+	"PointsToWin_VeryCloseToVictory"				"+{d:points_to_win} more!"
+	"PointsToWin_Victory"							"Could have stopped this"
+
+	"InstructionsTitle"								"Definitely Not Dota"
+	"InstructionsObjective"							"OBJECTIVE"
+	"InstructionsObjectiveText"						"Slay your enemies! Be the first to earn the goal number of kills, or the team with the most kills when the round ends, and you will be victorious."
+	"InstructionsHowToPlay"							"HOW TO PLAY"
+	"InstructionsLines"								"-Approach the middle of the map to earn bonus gold and experience.<br>
+													-Snatch up any giant coins to earn even more gold.<br>
+													-Every now and again the mystical FORCE STAFF will appear in the centre.<br>
+													-I'm really sorry you have to play this.<br>
+													-Look seriously just strap yourself in this game is pure garbage."
+
+	"Chest"											"THE FORCE STAFF"
+	"ItemWillSpawn"									"IS INCOMING"
+	"ItemHasSpawned"								"HAS ARRIVED"
+
+	"RecentScore"									"+{d:score}"
+
+	"Unassigned"      								"Unassigned Team"
+	"Spectator"       								"Spectator Team"
+	"Neutrals"        								"Neutral Team"
+	"NoTeam"          								"No Team"
+
+	"DOTA_GoodGuys"   								"TEAM CUM"
+	"DOTA_BadGuys"    								"TEAM GAY BABY AIDS"
+	"DOTA_Custom1"    								"Nick Gerrs"
+	"DOTA_Custom2"    								"Nick Cages"
+	"DOTA_Custom3"    								"Crackhead Gamers"
+	"DOTA_Custom4"    								"13%"
+	"DOTA_Custom5"    								"New champ players"
+	"DOTA_Custom6"    								"Anime Watchers (gay)"
+	"DOTA_Custom7"    								"Blacks in Paris"
+	"DOTA_Custom8"    								"Juuling In the Boys Room"
+	
+	"OverthrowHeroPickup"							"{s:hero_id}"
+	"OverthrowTextPickup"							"GOT THE"
+	"OverthrowItemPickup"							"{s:item_id}!"
+
+	"Remaining"										"REMAINING"
+
+	"Overtime"										"OVERTIME!"
+	"OvertimeInstructions"							"SCORE TO WIN"
+
+	"KillMessageHero"								"{s:hero_id}"
+	"KillMessageText"								"HAS OVERDOSED ON CRACK"
+	"KillMessageBounty"								"AND IS WORTH 500 BONUS GOLD!"
+	
+	"addonname"										"Definitely Not Dota"
+	"overthrow_game_info_header_objective"			"Objective:"
+	"overthrow_brief_description"					"Reach Crackhead status by proving your hero is the least balanced!"
+	"overthrow_game_info_header_how_to_play"		"How To Play:"
+	"overthrow_game_info_throne"					"Approach the <span class='midas_throne'>SALT PILE</span> to earn bonus <span class='gold'>gold</span> and <span class='xp'>experience</span>."
+	"overthrow_game_info_coins"						"Snatch up SALTY PRETZELS as <span class='overboss'>MR SALTY</span> throws them to earn more <span class='gold'>gold</span>."
+	"overthrow_game_info_items"						"<span class='midas_throne'>FORCE STAVES</span> occassionaly appear on the map, sell them for extra gold or use them to escape those annoying OP heroes."
+	"overthrow_game_info_tips_header"				"Tips:"
+	"overthrow_game_info_tip01"						"The current leader has a SALT SHAKER on their heads, kill them for bonus gold!"
+	"overthrow_game_info_tip02"						"Make sure you figure out which of your opponents is weak, so you can feed on them for easy kills and make them abandon."
+}
+

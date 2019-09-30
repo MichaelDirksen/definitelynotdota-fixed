@@ -1,0 +1,27 @@
+"AddonInfo"
+{
+	"ffa_8"
+	{
+		"MaxPlayers"		"8"
+	}
+	"ffa_8_arena"
+	{
+		"MaxPlayers"		"8"
+	}
+	"teams_20"
+	{
+		"MaxPlayers"		"20"
+	}
+	"teams_10"
+	{
+		"MaxPlayers"		"10"
+	}
+	"teams_20_lane"
+	{
+		"MaxPlayers"		"20"
+	}
+	"teams_10_lane"
+	{
+		"MaxPlayers"		"10"
+	}
+}

@@ -1,0 +1,8 @@
+unbalanced_teams_20
+{
+	material materials/overviews/unbalanced_teams_20.vmat
+	pos_x -4608
+	pos_y 4608
+	scale 9.000
+}
+

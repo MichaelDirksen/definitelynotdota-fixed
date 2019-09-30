@@ -1,0 +1,143 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Bag of Gold
+	//=================================================================================================================
+	"item_bag_of_gold"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/gold_coin001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+	//=================================================================================================================
+	// Treasure Chest
+	//=================================================================================================================
+	"item_treasure_chest"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1001"
+		"AbilityName"					"item_treasure_chest"
+		"BaseClass"						"item_bag_of_gold"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_ITEM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"ItemKillable"					"0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemKillable"					"0"
+		"ItemCastOnPickup"				"1"
+	}
+	"item_bonusmeme1" 
+	{
+		"ID"           "1100"
+		"BaseClass"    "item_datadriven"
+		"AbilityTextureName" "item_rapier"
+		"Model"        "models/props_gameplay/recipe.vmdl" 
+		"Effect"       "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemQuality"  "artifact"
+
+		"ItemCost"     "500"
+		"ItemKillable" "0" 
+		"ItemSellable" "1"
+		"ItemPurchasable" "0"
+		"ItemDroppable" "1"
+		"ItemShareability" "ITEM_NOT_SHAREABLE"
+
+		"SideShop"     "0" 
+		"SecretShop"   "0"
+
+		"ItemStackable" "1"
+		"ItemPermanent" "0"
+		"ItemDisassembleRule" "DOTA_ITEM_DISASSEMBLE_ALWAYS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"      "FIELD_INTEGER"
+				"bonus_stat"    "5"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_custom"
+			{
+				"Passive"  "1"
+				"IsHidden" "1" 
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+                "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "%bonus_stat"
+				}
+			} 
+		}
+	}
+	"item_dagon"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_1"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_2"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_3"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_4"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_dagon_5"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_recipe_dagon"
+	{
+		"ItemPurchasable"				"0"
+	}	
+}

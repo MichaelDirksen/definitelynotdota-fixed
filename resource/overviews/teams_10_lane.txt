@@ -1,0 +1,8 @@
+teams_10_lane
+{
+	material materials/overviews/teams_10_lane.vmat
+	pos_x -4096
+	pos_y 4096
+	scale 8.000
+}
+

@@ -1,0 +1,126 @@
+
+Strength
+"special_bonus_strength_6"
+"special_bonus_strength_14"
+"special_bonus_strength_20"
+
+Agility
+"special_bonus_agility_8"
+"special_bonus_agility_10"
+"special_bonus_agility_20"
+"special_bonus_agility_25"
+
+Intel
+"special_bonus_intelligence_8"
+"special_bonus_intelligence_10"
+"special_bonus_intelligence_35"
+
+Lifesteal
+"special_bonus_lifesteal_30"
+
+Attack Damage
+"special_bonus_attack_damage_20"
+"special_bonus_attack_damage_25"
+"special_bonus_attack_damage_40"
+"special_bonus_attack_damage_50"
+"special_bonus_attack_damage_65"
+"special_bonus_attack_damage_75"
+"special_bonus_attack_damage_120"
+"special_bonus_attack_damage_150"
+
+Attack Speed
+"special_bonus_attack_speed_20"
+"special_bonus_attack_speed_25"
+"special_bonus_attack_speed_30"
+"special_bonus_attack_speed_40"
+"special_bonus_attack_speed_50"
+
+HP
+"special_bonus_hp_150"
+"special_bonus_hp_175"
+"special_bonus_hp_200"
+"special_bonus_hp_250"
+"special_bonus_hp_300"
+"special_bonus_hp_350"
+"special_bonus_hp_400"
+"special_bonus_hp_500"
+
+MP
+"special_bonus_mp_175"
+"special_bonus_mp_200"
+"special_bonus_mp_250"
+
+
+Evasion
+"special_bonus_evasion_15"
+"special_bonus_evasion_20"
+
+All Stats
+"special_bonus_all_stats_5"
+"special_bonus_all_stats_10"
+"special_bonus_all_stats_20"
+
+MP regen
+"special_bonus_mp_regen_2"
+"special_bonus_mp_regen_3"
+"special_bonus_mp_regen_6"
+
+HP Regen
+"special_bonus_hp_regen_6"
+"special_bonus_hp_regen_25"
+"special_bonus_hp_regen_50"
+
+Movement Speed
+"special_bonus_movement_speed_15"
+"special_bonus_movement_speed_20"
+"special_bonus_movement_speed_30"
+"special_bonus_movement_speed_35"
+
+Armour
+"special_bonus_armor_5"
+"special_bonus_armor_6"
+"special_bonus_armor_8"
+"special_bonus_armor_12"
+"special_bonus_armor_15"
+
+EXP Bonus
+"special_bonus_exp_boost_15"
+"special_bonus_exp_boost_20"
+"special_bonus_exp_boost_25"
+
+Gold Bonus
+"special_bonus_gold_income_15"
+"special_bonus_gold_income_20"
+"special_bonus_gold_income_25"
+"special_bonus_gold_income_50"
+
+Cast Range
+"special_bonus_cast_range_75"
+"special_bonus_cast_range_175"
+"special_bonus_cast_range_200"
+"special_bonus_cast_range_250"
+
+Magic Reistence
+"special_bonus_magic_resistance_15"
+"special_bonus_magic_resistance_20"
+"special_bonus_magic_resistance_25"
+
+Spell Amplify
+"special_bonus_spell_amplify_5"
+"special_bonus_spell_amplify_10"
+
+Attack Range
+"special_bonus_attack_range_100"
+"special_bonus_attack_range_150"
+"special_bonus_attack_range_175"
+
+Cooldown reduction
+"special_bonus_cooldown_reduction_12"
+"special_bonus_cooldown_reduction_15"
+"special_bonus_cooldown_reduction_20"
+"special_bonus_cooldown_reduction_25"
+
+Spell Lifesteal
+"special_bonus_spell_lifesteal_20"
+"special_bonus_spell_lifesteal_70"
+
