@@ -671,5 +671,12 @@ function COverthrowGameMode:OnNPCSpawned(keys)
             Ability:SetLevel(1)
             print('Backstab leveled')
         end
+		
+		local Ability = hero:FindAbilityByName("phase_datadriven")
+        if Ability then
+            print('Phase innate passive')
+            Ability:SetLevel(1)
+            print('Phase leveled')
+        end
     end
 end

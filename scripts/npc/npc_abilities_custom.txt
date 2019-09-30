@@ -504,7 +504,7 @@
 		    "01"
 		    {
 		        "var_type"  "FIELD_INTEGER"
-		        "maxdrakes"    "4 6 8 10"
+		        "maxdrakes"    "2 4 6 8"
 		    }
 
 		}
@@ -538,7 +538,7 @@
 		    "01"
 		    {
 		        "var_type"  "FIELD_INTEGER"
-		        "maxdragons"    "2 3 4"
+		        "maxdragons"    "1 2 3"
 		    }
 
 		}
@@ -2511,8 +2511,8 @@
 		"AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"2"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"                         // Changes dynamically with scepter   
 		"FightRecapLevel"               "2"
@@ -2649,7 +2649,7 @@
 			"01"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"chance"                "10"
+				"chance"                "10 15"
 			}
 			"02"
 			{
@@ -3443,7 +3443,7 @@
 			"04"
 			{
 				"var_type"                  "FIELD_INTEGER"
-				"hpbonus"         			"500 1000 1500 2000"
+				"hpbonus"         			"250 500 750 1000"
 			}
 			
 			"05"
@@ -3467,7 +3467,6 @@
 			{
 				"Passive"           "1"
 				"IsPurgable"        "0"
-				"IsHidden"          "1"
 				
 				"Properties"
 				{
@@ -4166,12 +4165,12 @@
 			"01"
 			{
 				"var_type"                    "FIELD_FLOAT"
-				"duration"                    "6 8 10"
+				"duration"                    "4/6/8"
 			}
 			"02"
 			{
 				"var_type"                    "FIELD_FLOAT"
-				"attackspeed"                 "300"
+				"attackspeed"                 "100/200/300"
 			}
 			"03"
 			{
@@ -4181,12 +4180,12 @@
 			"04"
 			{
 				"var_type"                    "FIELD_FLOAT"
-				"evasion"                     "100"
+				"evasion"                     "50"
 			}
 			"05"
 			{
 				"var_type"                    "FIELD_FLOAT"
-				"regen"                   	  "40"
+				"regen"                   	  "20 35 50"
 			}
 			"06"
 			{

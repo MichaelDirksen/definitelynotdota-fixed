@@ -48,7 +48,7 @@
 
 	"KillMessageHero"								"{s:hero_id}"
 	"KillMessageText"								"HAS OVERDOSED ON CRACK"
-	"KillMessageBounty"								"AND IS WORTH 500 BONUS GOLD!"
+	"KillMessageBounty"								"AND GAINS 500 BONUS GOLD!"
 	
 	"addonname"										"Definitely Not Dota"
 	"overthrow_game_info_header_objective"			"Objective:"
