@@ -1,1 +1,0 @@
-		"Model"		"models/heroes/tuskarr/tuskarr_sigil.vmdl"

@@ -1329,4 +1329,27 @@
 		"Ability16"		"special_bonus_magic_resistance_25"
 		"Ability17"		"special_bonus_spell_block_15"
 	}
+	
+	//=================================================================================================================
+	// HERO: Riki
+	//==============================================================================================================
+		"npc_dota_hero_shaco"
+	{
+		"override_hero"		"npc_dota_hero_riki"
+		"Ability1"			"shaco_decieve_datadriven"
+		"Ability2"			"shaco_jackinthebox_datadriven"
+		"Ability3"			"shaco_twoshivpoison_datadriven"
+		"Ability4"			"shaco_backstab_datadriven"
+		"Ability5"			"generic_hidden"
+		"Ability6"			"shaco_hallucinate_datadriven"
+		"Ability10"			"special_bonus_attack_damage_25"
+		"Ability11"			"special_bonus_strength_10"
+		"Ability12"			"special_bonus_cooldown_reduction_12"
+		"Ability13"			"special_bonus_attack_speed_40"
+		"Ability14"			"special_bonus_hp_250"
+		"Ability15"			"special_bonus_armor_10"
+		"Ability16"			"special_bonus_magic_resistance_25"
+		"Ability17"			"special_bonus_spell_block_15"
+		"MovementTurnRate"	"4.0"
+	}
 }

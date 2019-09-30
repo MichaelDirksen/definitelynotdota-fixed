@@ -333,6 +333,9 @@ function COverthrowGameMode:InitGameMode()
 			WaypointName = "camp"..i.."_path_wp1"
 		}
 	end
+
+	spawnListener = ListenToGameEvent("npc_spawned", Dynamic_Wrap(COverthrowGameMode, "OnNPCSpawned"), self) 
+	
 end
 
 ---------------------------------------------------------------------------
@@ -654,6 +657,19 @@ function PrecacheEverythingFromTable( context, kvtable)
                 PrecacheResource( "soundfile",  value, context)
                 print("PRECACHE SOUND RESOURCE", value)
             end
+        end
+    end
+end
+
+
+function COverthrowGameMode:OnNPCSpawned(keys)
+    local hero = EntIndexToHScript(keys.entindex)
+    if hero:IsHero() then
+        local Ability = hero:FindAbilityByName("shaco_backstab_datadriven")
+        if Ability then
+            print('Shaco innate passive')
+            Ability:SetLevel(1)
+            print('Backstab leveled')
         end
     end
 end
